@@ -11,13 +11,11 @@ class MyHashMap:
     index = self._hash_function(key)
     bucket = self.buckets[index]
 
-    # Check if the key already exists in the bucket (collision handling)
     for i, (k, v) in enumerate(bucket):
         if k == key:
-            bucket[i] = (key, value)  # Update value
+            bucket[i] = (key, value)  
             return
 
-    # If key not found, add new pair
     bucket.append((key, value))
     self.size += 1
 
@@ -28,7 +26,7 @@ class MyHashMap:
     for k, v in bucket:
         if k == key:
             return v
-    return None  # Key not found
+    return None  
 
   def remove(self, key):
     index = self._hash_function(key)
@@ -39,12 +37,12 @@ class MyHashMap:
             del bucket[i]
             self.size -= 1
             return True
-    return False  # Key not found
+    return False  
 
-  def __len__(self):
+  def sizeMap(self):
     return self.size
 
-  def __str__(self):
+  def print(self):
     items = []
     for bucket in self.buckets:
         for k, v in bucket:
