@@ -84,9 +84,9 @@ if __name__ == "__main__":
   print(f"Value of 'apple': {my_map.get('apple')}")
   print(f"Value of 'grape': {my_map.get('grape')}")
 
-  print(f"Map size: {len(my_map)}")
-  print(f"Map content: {my_map}")
+  print(f"Map size: {my_map.sizeMap()}")
+  print(f"Map content: {my_map.print()}")
 
   my_map.remove("banana")
-  print(f"Map after removing 'banana': {my_map}")
-  print(f"Map size after removal: {len(my_map)}")
+  print(f"Map after removing 'banana': {my_map.print()}")
+  print(f"Map size after removal: {my_map.sizeMap()}")
